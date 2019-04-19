@@ -1,0 +1,77 @@
+<!-- camera view with chosen object -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Player</title>
+  <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="margin : 0px; overflow: hidden; font-family:courier; color:white; background-color: black">
+  <!-- <section id="main"></section> -->
+  <a-scene arjs embedded>
+    <a-camera position="0 0 0" look-controls="enabled: false; pointerLockEnabled: true" near="0.001" wasd-controls>
+      <!-- with jose, pseudo code all aframe lines -->
+    </a-entity> -->
+  </a-camera>
+  <a-marker preset="hiro">
+    <a-image id="myImage" src="" rotation="-90 0 0" position="0 0 2.5" opacity="0.6"></a-image>
+  </a-marker>
+  <a-marker type='barcode' value='5'></a-marker>
+</a-scene>
+<script type="text/javascript" src="profile.js"></script>
+</body>
+</html>
+
+<!-- <!doctype html>
+<html>
+<head>
+<title>Tinta</title>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+<div class="page-header text-center">
+<h1><span class="fa fa-anchor"></span> Profile Page</h1>
+<a href="/logout" class="btn btn-default btn-sm">Logout</a>
+</div>
+
+<div class="row">
+
+<!-- LOCAL INFORMATION -->
+<!-- <div class="col-sm-6">
+
+</div>
+
+
+<div class="col-sm-6">
+<h3>Messages</h3>
+<ul class="messages">
+<% for(var i=0; i<messages.length; i++) {%>
+<li class="message">
+<span><%= messages[i].name %></span>
+<span><%= messages[i].msg %></span>
+<span><%= messages[i].thumbUp %></span>
+<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+<span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+<span><i class="fa fa-trash" aria-hidden="true"></i></span>
+</li>
+<% } %>
+</ul>
+
+<h2>Add a message</h2>
+<% if (user.local.email) { %>
+<form action="/messages" method="POST">
+<input type="text" value="<%= user.local.email %>" name="name">
+<input type="text" placeholder="message" name="msg">
+<button type="submit">Submit</button>
+</form>
+</div>
+<% } %>
+
+</div>

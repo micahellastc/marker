@@ -1,0 +1,59 @@
+<!-- homepage -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Tinta</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <p><a href="javascript:login('show');">login</a></p>
+      <h1>TiNTA</h1>
+      <p><a href="/artist">designs</a></p>
+    </nav>
+  </header>
+  <div id="popupbox">
+    <form action="/artist" method="post">
+      <div class="form-group">
+        <input type="text" class="form-control" name="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-warning btn-lg">Login</button>
+    </form>
+    <br />
+    <center><a href="javascript:login('hide');">close</a></center>
+  </div>
+  <div class="hero">
+    <img src="img/rose.png" alt="">
+    <h2>Success starts with visualization</h2>
+    <h2>Try tattoo designs in real-time</h2>
+  </div>
+
+  <!-- <header>
+  <section class="logIn">
+  <a href="/artist">Login</a>
+  <a href="/signup">Signup</a>
+</section>
+</header>
+ -->
+
+<footer>
+  <span></span>
+  <section class="socialMed">
+    <p>About</p>
+    <p>Contact</p>
+    <p>Terms</p>
+  </section>
+</footer>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>

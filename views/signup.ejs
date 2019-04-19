@@ -1,0 +1,24 @@
+<!-- html for artist's public profile showcasing design and artist info -->
+
+<!doctype html>
+<html>
+<head>
+  <title>Tinta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div>
+    <h1>Designs by @tattooartist</h1>
+    <h3>Boston, MA</h3>
+    <% for(let i = 0; i < img.length; i++) {%>
+      <!-- <a href="/camera"> --><!-- </a> -->
+      <div data-source="<%= img[i].source %>" class="grid-item arObject">
+        <img class="src" src="<%= img[i].source %>" alt="">
+      </div>
+      <%}%>
+    </div>
+    <script type="text/javascript" src="try.js"></script>
+    <script type="text/javascript" src="profile.js"></script>
+
+  </body>
+  </html>

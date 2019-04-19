@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  padding: 0 25px 25px 25px;
+  background-color: #fff;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+header {
+  width: 100%;
+  /* background-image: url(img/hero.png); */
+  background-size: cover;
+
+}
+
+h1 {
+  font-size: 60px;
+  margin: 0;
+}
+img {
+margin: 0 30% 0 30%;
+width: 40%;
+
+}
+nav {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.main {
+  /* background-image: url(img/herob.png) */
+}
+
+.logIn {
+  float: left;
+  margin-left: 5%;
+}
+.logIn a {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 1%;
+  margin: auto;
+}
+
+form {
+  margin: auto;
+}
+input {
+  height: 50px;
+  width: 80%;
+}
+.userInput {
+  border-radius: 5px;
+  font-size: 25px;
+  color: #f9f9f9;
+  background-color: black;
+  text-shadow: 1px 1px 3px gray;
+  margin-left: 3%;
+  margin-top: 22px;
+}
+
+.main {
+  height: 380px;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 26px;
+}
+
+h2 {
+  color: #DB4E4E;
+  text-align: center;
+  font-size: 40px;
+  padding-top: 20px;
+}
+
+footer {
+  height: 150px;
+  width: 100%;
+}
+
+.socialMed {
+  color: white;
+  margin-left: 85%;
+  padding-top: 100px;
+  display: flex;
+}
+.socialMed p {
+  margin: 0 3%;
+}
+.container {
+  border: 1px solid black;
+  width: 30%;
+height: 500px;
+margin: auto;
+}
+#popupbox{
+margin: auto;
+padding-top: 10px;
+width: 40%;
+height: 500px;
+position: absolute;
+background: #FBFBF0;
+border: solid #000000 2px;
+z-index: 9;
+visibility: hidden;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  border: solid 1px gray;
+  border-radius: 5px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+}
+.profilePic {
+  height: 50px;
+  width: 50px;
+  border-radius: 2px;
+}
