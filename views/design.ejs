@@ -1,0 +1,43 @@
+<!-- html to show designs if artist is isLoggedIn -->
+
+<!doctype html>
+<html>
+<head>
+  <title>Tinta</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Designs</h2>
+  <p><a href="/logout">logout</a></p>
+
+  <div class="well">
+  <img src="img/hennessy.jpeg" class="profilePic" alt="">
+  <h3>Local</h3>
+  <% if (user.local.email) { %>
+  <p>
+  <strong>id</strong>: <%= user._id %><br>
+  <strong>username</strong>: <%= user.local.email %><br>
+  </p>
+  <% } %>
+  </div>
+  <p><a href="/signup">public profile</a></p>
+
+  <form class="" action="/upload/photo" method="post" enctype="multipart/form-data">
+      <input type="file" name="picture">
+      <button type="submit" name="button">Submit</button>
+  </form>
+
+  <% if (design) { %>
+  <p>
+  <strong>design</strong>: <%= design.dateCreated %><br>
+  <img class="src" src="data:image/png;base64,<%= design.image %>" alt="">
+
+  </p>
+  <% } %>
+
+
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+  </html>

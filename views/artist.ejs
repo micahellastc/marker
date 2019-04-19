@@ -24,22 +24,24 @@
   </div>
   <p><a href="/signup">public profile</a></p>
 
-  <form class="" action="/upload" method="post">
-      <input type="file" name="source">
+  <form class="" action="/upload/photo" method="post" enctype="multipart/form-data">
+      <input type="file" name="picture">
       <button type="submit" name="button">Submit</button>
-    </form>
+  </form>
 
 
   <div class="grid-container">
-
     <!-- displays each object in db 'designs' -->
-    <% for(let i = 0; i < img.length; i++) {%>
+    <% for(let i = 0; i < designs.length; i++) {%>
       <!-- <a href="/camera"> --><!-- </a> -->
-      <div data-source="<%= img[i].source %>" class="grid-item arObject">
+      <div data-source="<%= designs[i].image %>" class="grid-item arObject">
 
-      <a href="/artist/<%">
-        <img class="src" src="<%= img[i].source %>" alt="">
-      </a>
+
+        <a href="/design/<%= designs[i]._id %>">
+          View Image
+        </a>
+        <img class="src" src="data:image/png;base64,<%= designs[i].image %>" alt="">
+        <time><%= designs[i].dateCreated %></time>
 
       </div>
       <%}%>

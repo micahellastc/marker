@@ -5,6 +5,13 @@ function login(showhide){
     document.getElementById('popupbox').style.visibility="hidden";
   }
 }
+function signup(showhide){
+  if(showhide == "show"){
+    document.getElementById('popupbox-signup').style.visibility="visible";
+  }else if(showhide == "hide"){
+    document.getElementById('popupbox-signup').style.visibility="hidden";
+  }
+}
 
 //chooses the specific img to display as AR object
 let send = document.getElementsByClassName("arObject");

@@ -2,6 +2,7 @@
 
 // set up ======================================================================
 // get all the tools we need
+var fs = require('fs');
 var express  = require('express');
 var app      = express();
 var port     = process.env.PORT || 8080;
@@ -9,6 +10,9 @@ const MongoClient = require('mongodb').MongoClient
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash    = require('connect-flash');
+var multer = require('multer')
+var mkdirp = require('mkdirp');
+const ObjectId = require('mongodb').ObjectId
 
 var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -16,6 +20,8 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
 var configDB = require('./config/database.js');
+var Design       = require('./app/models/design');
+
 
 var db
 
@@ -23,19 +29,10 @@ var db
 mongoose.connect(configDB.url, (err, database) => {
   if (err) return console.log(err)
   db = database
-  require('./app/routes.js')(app, passport, db);
+  require('./app/routes.js')(app, passport, db, multer, ObjectId, Design, mkdirp,fs);
 }); // connect to our database
 
-//app.listen(port, () => {
-    // MongoClient.connect(configDB.url, { useNewUrlParser: true }, (error, client) => {
-    //     if(error) {
-    //         throw error;
-    //     }
-    //     db = client.db(configDB.dbName);
-    //     console.log("Connected to `" + configDB.dbName + "`!");
-    //     require('./app/routes.js')(app, passport, db);
-    // });
-//});
+
 
 require('./config/passport')(passport); // pass passport for configuration
 

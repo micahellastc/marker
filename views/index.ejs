@@ -15,6 +15,7 @@
   <header>
     <nav>
       <p><a href="javascript:login('show');">login</a></p>
+      <p><a href="javascript:signup('show');">signup</a></p>
       <h1>TiNTA</h1>
       <p><a href="/artist">designs</a></p>
     </nav>
@@ -31,6 +32,19 @@
     </form>
     <br />
     <center><a href="javascript:login('hide');">close</a></center>
+  </div>
+  <div id="popupbox-signup">
+    <form action="/signup" method="post">
+      <div class="form-group">
+        <input type="text" class="form-control" name="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-warning btn-lg">Sign Up</button>
+    </form>
+    <br />
+    <center><a href="javascript:signup('hide');">close</a></center>
   </div>
   <div class="hero">
     <img src="img/rose.png" alt="">
