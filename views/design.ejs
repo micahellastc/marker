@@ -3,41 +3,37 @@
 <!doctype html>
 <html>
 <head>
-  <title>Tinta</title>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-  <link rel="stylesheet" href="style.css">
+  <title>Marker</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <h2>Designs</h2>
-  <p><a href="/logout">logout</a></p>
+  <div class="mainContainer">
 
+  <header>
+    <nav>
+      <h1 ><a href="/">M<span class="arH1">ar</span>ker</a></h1>
+      <h3>Designs</h3>
+      <p><a href="javascript:login('show');">sign in</a></p>
+      <p class="signUp"><a href="javascript:signup('show');">get started</a></p>
+    </nav>
+  </header>
   <div class="well">
-  <img src="img/hennessy.jpeg" class="profilePic" alt="">
-  <h3>Local</h3>
-  <% if (user.local.email) { %>
-  <p>
-  <strong>id</strong>: <%= user._id %><br>
-  <strong>username</strong>: <%= user.local.email %><br>
-  </p>
-  <% } %>
-  </div>
-  <p><a href="/signup">public profile</a></p>
-
-  <form class="" action="/upload/photo" method="post" enctype="multipart/form-data">
-      <input type="file" name="picture">
-      <button type="submit" name="button">Submit</button>
-  </form>
-
   <% if (design) { %>
-  <p>
-  <strong>design</strong>: <%= design.dateCreated %><br>
-  <img class="src" src="data:image/png;base64,<%= design.image %>" alt="">
-
+  <p class="profileInfo">
+  <center>
+    <img class="src designs" src="data:image/png;base64,<%= design.image %>" alt=""><br>
+  <button style="width: 15%; margin: 5%;" class="arObject tryBtn" type="button" data-source="<%= design.image %>">Try Now</button>
+  </center>
   </p>
   <% } %>
-
-
-    <script type="text/javascript" src="main.js"></script>
+    </div>
+</div>
+  <footer>
+      <p>About</p>
+      <p>Contact</p>
+      <p>Terms</p>
+  </footer>
+  <script type="text/javascript" src="/send.js" ></script>
   </body>
-  </html>
+</html>

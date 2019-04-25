@@ -1,9 +1,10 @@
 // load the things we need
 var mongoose = require('mongoose');
+const uuidv4 = require('uuid/v4');
 
 // define the schema for our design model
 var designSchema = mongoose.Schema({
-
+    filename: {type: String, default: uuidv4() },
     image: Buffer,
     userId: mongoose.Schema.Types.ObjectId,
     dateCreated: {

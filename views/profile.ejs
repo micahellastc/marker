@@ -1,0 +1,71 @@
+<!-- html to show designs if artist is isLoggedIn -->
+
+<!doctype html>
+<html>
+<head>
+  <title>Marker</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="mainContainer">
+  <header>
+    <nav>
+      <h1 style="margin-right: 75%; font-family: 'Raleway', sans-serif;"><a href="/">M<span class="arH1">ar</span>ker</a></h1>
+      <p><a href="/logout">logout</a></p>
+      <p class="signUp"><a href="/public">share designs</a></p>
+    </nav>
+  </header>
+
+  <div class="well">
+  <% if (user.local.email) { %>
+  <p class="profileInfo">
+    <img class="profilePhoto" src="<%= user.profilePhoto %>" alt="">
+    <span class="instagram"><%= user.instagram %></span><br>
+    <span><%= user.name %></span><br>
+    <span>Based in <%= user.cityState %></span>
+    <br>
+    <strong>email</strong>: <%= user.local.email %><br>
+  </p>
+  <% } %>
+
+  </div>
+
+  <div class="grid-container">
+
+    <!-- displays each object in db 'designs' -->
+    <% for(let i = 0; i < designs.length; i++) {%>
+      <!-- <a href="/camera"> --><!-- </a> -->
+      <div>
+        <div data-source="<%= designs[i].image %>" class="grid-item arObject">
+        <div class="publicDes">
+
+          <img class="src designs" src="data:image/png;base64,<%= designs[i].image %>" alt="">
+          <!-- <time><%= designs[i].dateCreated %></time> -->
+          <a class="designLink" href="/design/<%= designs[i].filename %>">
+            View
+          </a>
+          </div>
+        </div>
+        <i _id="<%= designs[i]._id %>" class="fas fa-minus-circle"></i>
+      </div>
+      <%}%>
+
+        <!-- <h3>Share <a href="/public">designs</a></h3> -->
+    </div>
+    <form class="uploadDesign" action="/upload/photo" method="post" enctype="multipart/form-data">
+        <input id="uploadDes" type="file" name="picture" style="margin-left: -35%; height: 25px;">
+        <button style="margin-left: -35%;" class="uploadBtn"type="submit" name="button">Upload new design</button>
+    </form>
+  </div>
+    <footer>
+        <p>About</p>
+        <p>Contact</p>
+        <p>Terms</p>
+    </footer>
+    <script type="text/javascript" src="/main.js"></script>
+    <script type="text/javascript" src="/send.js" ></script>
+  </body>
+  </html>

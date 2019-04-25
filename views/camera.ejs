@@ -7,20 +7,30 @@
   <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
-<body style="margin : 0px; overflow: hidden; font-family:courier; color:white; background-color: black">
+<body style="margin : 0px; overflow: hidden; font-family:courier; color:white;">
   <!-- <section id="main"></section> -->
-  <a-scene arjs embedded>
+
+<div style="margin: 0; background: black; z-index:1.5">
+  <p><a href="/public" style="color: white;">back to designs</a></p>
+
+  <input id="mySlider" type="range" min="1" max="100" value="1" step="1" onchange="resizeImage();" style="width:500px;">
+
+</div>
+
+  <a-scene arjs="debugUIEnabled: false; patternRatio: 0.90;" embedded>
     <a-camera position="0 0 0" look-controls="enabled: false; pointerLockEnabled: true" near="0.001" wasd-controls>
       <!-- with jose, pseudo code all aframe lines -->
     </a-entity> -->
   </a-camera>
-  <a-marker preset="hiro">
-    <a-image id="myImage" src="" rotation="-90 0 0" position="0 0 2.5" opacity="0.6"></a-image>
+  <a-marker type="pattern" url="mlogo.patt" >
+    <a-image id="myImage" src="" rotation="-90 0 0" position="0 0 2" opacity="0.6"></a-image>
   </a-marker>
+
   <a-marker type='barcode' value='5'></a-marker>
 </a-scene>
+
 <script type="text/javascript" src="profile.js"></script>
 </body>
 </html>
@@ -28,10 +38,10 @@
 <!-- <!doctype html>
 <html>
 <head>
-<title>Tinta</title>
+<title>Marker</title>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <div class="container">

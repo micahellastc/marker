@@ -5,6 +5,7 @@ function login(showhide){
     document.getElementById('popupbox').style.visibility="hidden";
   }
 }
+
 function signup(showhide){
   if(showhide == "show"){
     document.getElementById('popupbox-signup').style.visibility="visible";
@@ -12,15 +13,21 @@ function signup(showhide){
     document.getElementById('popupbox-signup').style.visibility="hidden";
   }
 }
+var trash = document.getElementsByClassName('fa-minus-circle')
 
-//chooses the specific img to display as AR object
-let send = document.getElementsByClassName("arObject");
-Array.from(send).forEach(function(element){
-  element.addEventListener('click', function() {
-    let src = this.getAttribute('data-source');
-    console.log('This is your source ', src)
-    // takes in key[think properties] & value
-    localStorage.setItem('arImg', src);
-    window.location.href = 'http://localhost:8080/camera'
-  })
-})
+Array.from(trash).forEach(function(element) {
+      element.addEventListener('click', function(){
+        const _id = this.getAttribute("_id")
+        fetch('/deleteDesign', {
+          method: 'delete',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            '_id': _id
+          })
+        }).then(function (response) {
+          window.location.reload()
+        })
+      });
+});

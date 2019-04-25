@@ -1,0 +1,60 @@
+<!-- html to show designs if artist is isLoggedIn -->
+
+<!doctype html>
+<html>
+<head>
+  <title>Marker</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/public.css">
+</head>
+<body>
+  <div class="mainContainer">
+    <header>
+      <nav>
+        <h1 ><a href="/">M<span class="arH1">ar</span>ker</a></h1>
+        <h3 style="margin-right: 66%;">Designs</h3>
+
+        <p><a href="javascript:login('show');">sign in</a></p>
+        <p class="signUp"><a href="javascript:signup('show');">get started</a></p>
+      </nav>
+    </header>
+    </nav>
+  </header>
+  <div id="container" class="grid-container">
+    <!-- displays each object in db 'designs' -->
+    <% for(let i = 0; i < designs.length; i++) {%>
+      <!-- <a href="/camera"> --><!-- </a> -->
+      <% console.log(designs[i] != null)%>
+      <% if('user' in designs[i]){%>
+
+      <div data-source="<%= designs[i].image %>" class="grid-item arObject">
+        <div class="publicDes">
+          <img class="src designs" src="data:image/png;base64,<%= designs[i].image %>" alt=""></div>
+
+          <a class="designLink" href="/artist/<%= designs[i].user.local.email %>">
+            Explore Artist
+          </a>
+        <!-- <time><%= designs[i].dateCreated %></time> -->
+        <!-- <a href="/design/<%= designs[i].filename %>">
+          View Image
+        </a>
+        <a href="/artist/<%= designs[i].user.local.email %>">
+          View Artist
+        </a> -->
+      </div>
+      <%}%>
+      <%}%>
+
+    </div>
+      </div>
+      <footer>
+          <p>About</p>
+          <p>Contact</p>
+          <p>Terms</p>
+      </footer>
+    <script type="text/javascript" src="/main.js"></script>
+    <script type="text/javascript" src="/send.js" ></script>
+  </body>
+  </html>
