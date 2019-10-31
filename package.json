@@ -18,7 +18,7 @@
     "method-override": "~2.3.6",
     "mkdirp": "^0.5.1",
     "mongodb": "^2.2.36",
-    "mongoose": "^5.4.20",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "mpath": ">=0.5.1",
     "multer": "^1.4.1",
