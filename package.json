@@ -17,7 +17,7 @@
     "lodash": ">=4.17.11",
     "method-override": "~2.3.6",
     "mkdirp": "^0.5.1",
-    "mongodb": "^2.2.36",
+    "mongodb": "^3.1.13",
     "mongoose": "^5.4.20",
     "morgan": "^1.9.1",
     "mpath": ">=0.5.1",
